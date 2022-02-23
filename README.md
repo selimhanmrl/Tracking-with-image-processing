@@ -11,6 +11,12 @@ For detecting moving objects used methods given below :
 
 After all methods find countours for object. 
   
+First of all install requirements with
+
+    pip install -r requirements.txt
+
+Runnig code: 
+
     python tracking.py 'video path' 'experiment type' 'experiment area exact lenght'
 For now as experiment are we use 'openfield' of 'plusmaze' while analyzing videos you should select areas for tracking.
 
