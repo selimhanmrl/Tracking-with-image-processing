@@ -40,18 +40,16 @@ backSub = cv2.createBackgroundSubtractorKNN(detectShadows=False)
 
 ## Polygon Drawer Class
 pd_ = PolygonDrawer("Polygon",frame1)
-#image = pd_.run(frame1)
+image = pd_.run(frame1)
 
 #fps for calculate time
 fps = cap.get(5)
 pts = []
 print(pd_.points)
 
-#pd.points = [[(347, 205), (541, 209), (541, 249), (346, 249)], [(302, 247), (307, 208), (113, 203), (111, 239)], [(315, 45), (347, 44), (347, 207), (311, 211)], [(307, 431), (341, 429), (309, 253), (344, 253)]]
 
 # for plus maze there is 4 polygon to separate experimant area
 if exp_type == 'plusmaze':
-    pd_.points = [[(621, 442), (620, 501), (969, 510), (968, 457)], [(541, 431), (541, 501), (218, 493), (221, 436)], [(564, 66), (632, 65), (541, 429), (621, 438)], [(539, 505), (619, 502), (607, 885), (534, 885)]]
 
     polyRight = Polygon(pd_.points[0])
 
@@ -61,6 +59,7 @@ if exp_type == 'plusmaze':
 
     polyDown = Polygon(pd_.points[3])
 
+# for plus maze there is 2 polygon to separate experimant area
 
 if exp_type == 'openfield':
     pd_.points =   [[(620, 440), (621, 502), (965, 511), (966, 454)], [(540, 431), (539, 506), (218, 492), (222, 436)], [(564, 65), (634, 64), (621, 437), (541, 430)], [(540, 506), (619, 503), (609, 884), (534, 885)]]
