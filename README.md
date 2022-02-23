@@ -1,11 +1,13 @@
 # Tracking-with-image-processing
 Detecting moving object with image processing methods
 
-For detecting moving objects used methods given below 
+For detecting moving objects used methods given below :
   
-  backgraund substraction
-  Threshold
-  Dilate
+    Backgraund Substraction 
+  
+    Threshold 
+  
+    Dilate
 
 After all methods find countours for object. 
   
