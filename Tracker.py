@@ -7,6 +7,7 @@ import pandas as pd
 import math
 import sys
 import os
+from tqdm import tqdm
 
 if len(sys.argv)>1:
     video_name = sys.argv[1]
@@ -110,6 +111,9 @@ inside = 0
 outside = 0
 dist_exp_area = abs(r_x - l_x)
 counter= 0
+
+pbar = tqdm(range(int(cap.get(cv2.CAP_PROP_FRAME_COUNT))),desc="Creating output..")
+
 while cap.isOpened():
     if counter == total_frame -1 :
         break
@@ -170,7 +174,8 @@ while cap.isOpened():
             else:
                 outside += 1
     counter +=1
-    
+    pbar.update(1)
+
 
     #cv2.imshow('Feed',frame1)
     #cv2.imshow('mask',mask)
@@ -223,7 +228,6 @@ if exp_type == 'openfield':
     df_open.loc[len(df_open.index)] = result
     df_open.to_csv('Results/openfield.csv',index=False)
     print("Results are done!!!")
-print(total_path)
-print(times)
+
 cap.release()
 cv2.destroyAllWindows()
