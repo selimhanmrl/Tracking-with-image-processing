@@ -1,4 +1,3 @@
-from ctypes import pointer
 import cv2
 import numpy as np
 from shapely.geometry import Point, Polygon
